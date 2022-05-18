@@ -61,18 +61,30 @@ let wetter = {
     console.log();
   },
   displayVorhersage: function (data2) {
-    document.querySelector(".tag").innerHTML = data2.daily
+    document.querySelector(".canvas").innerHTML = data2.daily
       .map((day, idx) => {
         if (idx <= 2) {
           let dt = new Date(day.dt * 1000);
           let tempMax = "Max. " + day.temp.max + "°C";
           let tempMin = "Min. " + day.temp.min + "°C";
 
-          return `<div class="tag"><h6>${dt.toDateString(
-            "de-De"
-          )}</h6><h4>${tempMax}</h4><h4>${tempMin}</h4><div class="vor"><img src="https://openweathermap.org/img/wn/${
+          return `
+           
+          <div class="tag">
+          <h6>${dt.toDateString("de-De")}
+          </h6>
+          <div class="vor">
+          <div class="links">
+          <h4>${tempMax}</h4>
+          <h4>${tempMin}</h4>
+          </div>
+          <img src="https://openweathermap.org/img/wn/${
             day.weather[0].icon
-          }.png"/><h4>${day.weather[0].description}</h4></div></div>`;
+          }.png"/>
+          <h4>${day.weather[0].description}</h4>
+          </div>
+          
+          </div>`;
         }
       })
       .join(" ");

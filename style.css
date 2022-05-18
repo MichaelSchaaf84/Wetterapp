@@ -81,15 +81,14 @@ h3 {
   font-size: 16px;
 }
 .tag {
-  background-color: #7979797c;
   border-radius: 8px;
   padding: 10px;
-  margin-top: 10px;
+  margin: 5px 0 5px 0px;
+  background-color: #7979797c;
 }
-.vorhersage {
-}
+
 h6 {
-  margin: 0;
+  margin-top: 10px;
 }
 .temp-werte {
   margin-right: 10px;
@@ -100,4 +99,7 @@ h6 {
 .vor {
   display: flex;
   align-items: center;
+}
+.links {
+  margin-right: 70px;
 }
