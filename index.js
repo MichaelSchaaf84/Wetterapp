@@ -10,6 +10,7 @@ let wetter = {
       .then((response) => response.json())
       .then((data) => this.displayWetter(data));
   },
+  // fetchFor: function () {},
   displayWetter: function (data, data2) {
     const { name } = data;
     const { icon, description } = data.weather[0];
@@ -53,7 +54,7 @@ let wetter = {
     document.querySelector(".wetter").classList.remove("laden");
     document.querySelector(".zeit").innerText = new Date(
       dt * 1000 + data.timezone
-    );
+    ).toLocaleString();
     document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
     //  console.log(dt, data.timezone);
@@ -67,7 +68,9 @@ let wetter = {
           let tempMax = "Max. " + day.temp.max + "°C";
           let tempMin = "Min. " + day.temp.min + "°C";
 
-          return `<div class="tag"><h6>${dt.toDateString()}</h6><h4>${tempMax}</h4><h4>${tempMin}</h4><div class="vor"><img src="https://openweathermap.org/img/wn/${
+          return `<div class="tag"><h6>${dt.toDateString(
+            "de-De"
+          )}</h6><h4>${tempMax}</h4><h4>${tempMin}</h4><div class="vor"><img src="https://openweathermap.org/img/wn/${
             day.weather[0].icon
           }.png"/><h4>${day.weather[0].description}</h4></div></div>`;
         }
