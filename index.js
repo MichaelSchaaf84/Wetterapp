@@ -63,7 +63,7 @@ let wetter = {
   displayVorhersage: function (data2) {
     document.querySelector(".canvas").innerHTML = data2.daily
       .map((day, idx) => {
-        if (idx <= 2) {
+        if (idx > 0 && idx <= 3) {
           let dt = new Date(day.dt * 1000);
           let tempMax = "Max. " + day.temp.max + "°C";
           let tempMin = "Min. " + day.temp.min + "°C";
