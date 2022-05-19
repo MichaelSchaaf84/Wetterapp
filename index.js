@@ -80,7 +80,7 @@ let wetter = {
           </div>
           <img src="https://openweathermap.org/img/wn/${
             day.weather[0].icon
-          }.png"/>
+          }@2x.png"/>
           <h4>${day.weather[0].description}</h4>
           </div>
           
