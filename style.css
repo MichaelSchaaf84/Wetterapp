@@ -101,5 +101,5 @@ h6 {
   align-items: center;
 }
 .links {
-  margin-right: 80px;
+  min-width: 33%;
 }

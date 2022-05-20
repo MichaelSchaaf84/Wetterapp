@@ -40,10 +40,6 @@ let wetter = {
       "https://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".beschreibung").innerText = description;
     document.querySelector(".temp").innerText = temp.toFixed(1) + "°C";
-    document.querySelector(".min").innerText =
-      "Min " + temp_min.toFixed(1) + "°C";
-    document.querySelector(".max").innerText =
-      "Max " + temp_max.toFixed(1) + "°C";
     document.querySelector(".feuchte").innerText = document.querySelector(
       ".feuchte"
     ).innerText = "Luftfeuchtigkeit: " + humidity + " %";
@@ -89,6 +85,10 @@ let wetter = {
       })
       .join(" ");
     console.log(data2);
+    document.querySelector(".min").innerText =
+      "Min " + data2.daily[0].temp.min.toFixed(1) + "°C";
+    document.querySelector(".max").innerText =
+      "Max " + data2.daily[0].temp.max.toFixed(1) + "°C";
   },
   suche: function () {
     this.fetchWetter(document.querySelector(".suchfeld").value);
