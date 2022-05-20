@@ -29,7 +29,15 @@ let wetter = {
     )
       .then((response) => response.json())
       .then((data2) => this.displayVorhersage(data2));
-
+    luft = fetch(
+      "http://api.openweathermap.org/data/2.5/air_pollution?lat=" +
+        lat +
+        "&lon=" +
+        lon +
+        "&units=metric&lang=de&appid=0496d52bdcb26b13c5960024fbf6a834"
+    )
+      .then((response) => response.json())
+      .then((luft) => this.luftVer(luft));
     console.log(data);
     console.log(icon);
     //  console.log("Test:", dt);
@@ -89,6 +97,30 @@ let wetter = {
       "Min " + data2.daily[0].temp.min.toFixed(1) + "°C";
     document.querySelector(".max").innerText =
       "Max " + data2.daily[0].temp.max.toFixed(1) + "°C";
+  },
+  luftVer: function (luft) {
+    console.log(luft);
+    // const { aqi } = luft.list[0].main.aqi;
+    // console.log(aqi);
+    let msg = (stat = luft.list[0].main.aqi);
+
+    if (stat == 1) {
+      msg = "Hervorragend";
+    }
+    if (stat == 2) {
+      msg = "Gut";
+    }
+    if (stat == 3) {
+      msg = "Geht so";
+    }
+    if (stat == 4) {
+      msg = "Schlecht";
+    }
+    if (stat == 5) {
+      msg = "Sehr schlecht";
+    }
+    console.log(msg);
+    document.querySelector(".luft").innerText = "Luftqualität: " + msg;
   },
   suche: function () {
     this.fetchWetter(document.querySelector(".suchfeld").value);
