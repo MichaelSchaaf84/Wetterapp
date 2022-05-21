@@ -30,7 +30,7 @@ let wetter = {
       .then((response) => response.json())
       .then((data2) => this.displayVorhersage(data2));
     luft = fetch(
-      "http://api.openweathermap.org/data/2.5/air_pollution?lat=" +
+      "https://api.openweathermap.org/data/2.5/air_pollution?lat=" +
         lat +
         "&lon=" +
         lon +
