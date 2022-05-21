@@ -73,28 +73,26 @@ let wetter = {
     document.querySelector(".canvas").innerHTML = data2.daily
       .map((day, idx) => {
         if (idx > 0 && idx <= 3) {
-          let dt = new Date(day.dt * 1000);
+          let dt = new Date(day.dt * 1000).toLocaleString("de-DE", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          });
           let tempMax = "Max. " + day.temp.max + "°C";
           let tempMin = "Min. " + day.temp.min + "°C";
 
           return `
            
           <div class="tag">
-          <h6>${dt.toDateString("de-DE", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
+          <h6>${dt}
           </h6>
           <div class="vor">
           <div class="links">
           <h4>${tempMax}</h4>
           <h4>${tempMin}</h4>
           </div>
-          <img src="https://openweathermap.org/img/wn/${
-            day.weather[0].icon
-          }@2x.png"/>
+          <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"/>
           <h4>${day.weather[0].description}</h4>
           </div>
           
