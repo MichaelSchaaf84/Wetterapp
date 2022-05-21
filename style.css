@@ -15,6 +15,7 @@ body {
 .card {
   background: #161616d2;
   padding: 2em;
+  padding-bottom: 1em;
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
@@ -105,4 +106,12 @@ h6 {
 }
 h3.luft {
   margin-left: 80px;
+}
+h5 {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 12px;
+}
+a {
+  color: white;
 }

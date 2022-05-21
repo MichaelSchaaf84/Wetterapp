@@ -43,7 +43,7 @@ let wetter = {
     //  console.log("Test:", dt);
     // console.log(data, lat, lon);
     // console.log(name, icon, description, temp, humidity, speed);
-    document.querySelector(".stadt").innerText = "Wetter in " + name;
+    document.querySelector(".stadt").innerText = "Wetter für " + name;
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".beschreibung").innerText = description;
