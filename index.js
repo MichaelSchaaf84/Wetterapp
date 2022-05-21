@@ -58,7 +58,12 @@ let wetter = {
     document.querySelector(".wetter").classList.remove("laden");
     document.querySelector(".zeit").innerText = new Date(
       dt * 1000 + data.timezone
-    ).toLocaleString();
+    ).toLocaleString("de-DE", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
     document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
     //  console.log(dt, data.timezone);
@@ -75,7 +80,12 @@ let wetter = {
           return `
            
           <div class="tag">
-          <h6>${dt.toDateString("de-De")}
+          <h6>${dt.toDateString("de-DE", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
           </h6>
           <div class="vor">
           <div class="links">
