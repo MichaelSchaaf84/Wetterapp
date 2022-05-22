@@ -150,3 +150,15 @@ img.icon {
 .min {
   margin-left: 5px;
 }
+@media all and (max-width: 460px) {
+  .beschreibung {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+  .iconBeschreibung.flex {
+    flex-direction: column;
+  }
+}
