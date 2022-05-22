@@ -162,7 +162,8 @@ img.icon {
     margin: 2px;
   }
   .card {
-    padding: 0.5em;
+    padding: 1.5em;
+    padding-bottom: 1em;
     margin: 0;
   }
   .iconBeschreibung.flex {
