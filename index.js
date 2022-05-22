@@ -78,8 +78,8 @@ let wetter = {
             month: "long",
             year: "numeric",
           });
-          let tempMax = "Max. " + day.temp.max + "°C";
-          let tempMin = "Min. " + day.temp.min + "°C";
+          let tempMax = "Max. " + day.temp.max.toFixed(1) + "°C";
+          let tempMin = "Min. " + day.temp.min.toFixed(1) + "°C";
 
           return `
            
