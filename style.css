@@ -150,6 +150,9 @@ img.icon {
 .min {
   margin-left: 5px;
 }
+img {
+  margin-left: 50px;
+}
 @media all and (max-width: 460px) {
   .beschreibung {
     font-size: 20px;
