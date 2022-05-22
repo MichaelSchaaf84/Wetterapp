@@ -158,6 +158,13 @@ img.icon {
     margin-top: -20px;
     margin-bottom: 20px;
   }
+  body {
+    margin: 2px;
+  }
+  .card {
+    padding: 0.5em;
+    margin: 0;
+  }
   .iconBeschreibung.flex {
     flex-direction: column;
   }
