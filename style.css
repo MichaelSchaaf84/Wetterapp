@@ -59,7 +59,8 @@ h1.temp {
 }
 .beschreibung {
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: 0;
+  font-size: 24px;
 }
 .flex {
   display: flex;
@@ -78,8 +79,9 @@ h1.temp {
   top: 0;
 }
 
-h3 {
-  font-size: 16px;
+h3.luft {
+  font-size: 19.2px;
+  margin: 0;
 }
 .tag {
   border-radius: 8px;
@@ -95,7 +97,8 @@ h6 {
   margin-right: 10px;
 }
 .minmax {
-  margin-left: 0;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 .vor {
   display: flex;
@@ -104,9 +107,7 @@ h6 {
 .links {
   min-width: 33%;
 }
-h3.luft {
-  margin-left: 80px;
-}
+
 h5 {
   margin: 0;
   margin-top: 15px;
@@ -114,4 +115,38 @@ h5 {
 }
 a {
   color: white;
+}
+.windc {
+  display: flex;
+  align-items: center;
+}
+
+.wind {
+  margin-left: 5px;
+}
+.svgwind {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+}
+.feuchte {
+  margin-left: 5px;
+}
+.prozent {
+  margin: ;
+}
+.luft {
+  margin: 5px;
+}
+img.icon {
+  margin-left: 20px;
+}
+.zeit {
+  margin: 0;
+}
+.max {
+  margin-left: 5px;
+}
+.min {
+  margin-left: 5px;
 }

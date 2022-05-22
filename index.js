@@ -11,7 +11,7 @@ let wetter = {
       .then((data) => this.displayWetter(data));
   },
   // fetchFor: function () {},
-  displayWetter: function (data, data2) {
+  displayWetter: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, temp_min, temp_max, humidity } = data.main;
@@ -20,7 +20,7 @@ let wetter = {
     const { dt } = data;
 
     console.log(dt, data.timezone);
-    data2 = fetch(
+    let forcast = fetch(
       "https://api.openweathermap.org/data/2.5/onecall?lat=" +
         lat +
         "&lon=" +
@@ -28,8 +28,8 @@ let wetter = {
         "&units=metric&lang=de&appid=0496d52bdcb26b13c5960024fbf6a834"
     )
       .then((response) => response.json())
-      .then((data2) => this.displayVorhersage(data2));
-    luft = fetch(
+      .then((forcast) => this.displayVorhersage(forcast));
+    let luft = fetch(
       "https://api.openweathermap.org/data/2.5/air_pollution?lat=" +
         lat +
         "&lon=" +
@@ -45,7 +45,7 @@ let wetter = {
     // console.log(name, icon, description, temp, humidity, speed);
     document.querySelector(".stadt").innerText = "Wetter für " + name;
     document.querySelector(".icon").src =
-      "https://openweathermap.org/img/wn/" + icon + ".png";
+      "https://openweathermap.org/img/wn/" + icon + "@4x.png";
     document.querySelector(".beschreibung").innerText = description;
     document.querySelector(".temp").innerText = temp.toFixed(1) + "°C";
     document.querySelector(".feuchte").innerText = document.querySelector(
@@ -53,8 +53,7 @@ let wetter = {
     ).innerText = "Luftfeuchtigkeit: " + humidity + " %";
 
     "Luftfeuchtigkeit: " + humidity + " %";
-    document.querySelector(".wind").innerText =
-      "Windgeschwindigkeit: " + speed + "km/h";
+    document.querySelector(".wind").innerText = speed + "km/h";
     document.querySelector(".wetter").classList.remove("laden");
     document.querySelector(".zeit").innerText = new Date(
       dt * 1000 + data.timezone
@@ -69,8 +68,8 @@ let wetter = {
     //  console.log(dt, data.timezone);
     console.log();
   },
-  displayVorhersage: function (data2) {
-    document.querySelector(".canvas").innerHTML = data2.daily
+  displayVorhersage: function (forcast) {
+    document.querySelector(".canvas").innerHTML = forcast.daily
       .map((day, idx) => {
         if (idx > 0 && idx <= 3) {
           let dt = new Date(day.dt * 1000).toLocaleString("de-DE", {
@@ -100,11 +99,11 @@ let wetter = {
         }
       })
       .join(" ");
-    console.log(data2);
+    console.log(forcast);
     document.querySelector(".min").innerText =
-      "Min " + data2.daily[0].temp.min.toFixed(1) + "°C";
+      forcast.daily[0].temp.min.toFixed(1) + "°C";
     document.querySelector(".max").innerText =
-      "Max " + data2.daily[0].temp.max.toFixed(1) + "°C";
+      forcast.daily[0].temp.max.toFixed(1) + "°C";
   },
   luftVer: function (luft) {
     console.log(luft);
