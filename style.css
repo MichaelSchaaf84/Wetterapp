@@ -20,7 +20,7 @@ body {
   border-radius: 30px;
   width: 100%;
   max-width: 430px;
-  margin: 0em;
+  margin: 1em;
 }
 
 .suche {
@@ -166,8 +166,6 @@ img {
     margin: 2px;
   }
   .card {
-    padding: 1.5em;
-    padding-bottom: 1em;
     margin: 0;
   }
   .iconBeschreibung.flex {
