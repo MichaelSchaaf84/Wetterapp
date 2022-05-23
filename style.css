@@ -164,8 +164,11 @@ img {
   }
   body {
     margin: 2px;
+    overflow-x: hidden;
   }
   .card {
+    padding: 1.5em;
+    padding-bottom: 1em;
     margin: 0;
   }
   .iconBeschreibung.flex {
