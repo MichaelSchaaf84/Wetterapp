@@ -59,6 +59,8 @@ h1.temp {
   margin: 0;
 }
 .beschreibung {
+  justify-content: center;
+  align-items: center;
   text-transform: capitalize;
   margin-left: 0;
   font-size: 24px;
@@ -140,7 +142,8 @@ a {
   margin-left: 5px;
 }
 img.icon {
-  margin-left: 20px;
+  margin-left: 40px;
+  max-width: 150px;
 }
 .zeit {
   margin: 0;
@@ -152,7 +155,7 @@ img.icon {
   margin-left: 5px;
 }
 img {
-  margin-left: 50px;
+  margin-left: 0px;
 }
 @media all and (max-width: 460px) {
   .beschreibung {

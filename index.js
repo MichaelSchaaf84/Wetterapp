@@ -8,7 +8,8 @@ let wetter = {
         this.apiKey
     )
       .then((response) => response.json())
-      .then((data) => this.displayWetter(data));
+      .then((data) => this.displayWetter(data))
+      .catch(console.err);
   },
   // fetchFor: function () {},
   displayWetter: function (data) {
