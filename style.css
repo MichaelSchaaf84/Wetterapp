@@ -97,7 +97,6 @@ h6 {
   margin-top: 10px;
 }
 .temp-werte {
-  margin-right: 10px;
 }
 .minmax {
   margin-bottom: 16px;
@@ -160,10 +159,20 @@ img {
 @media all and (max-width: 460px) {
   .beschreibung {
     font-size: 20px;
-    text-align: center;
-    margin-left: 20px;
+
     margin-top: -20px;
     margin-bottom: 20px;
+  }
+  img.icon {
+    max-width: 120px;
+    margin: 0 auto;
+  }
+  .iconBeschreibung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+    text-align: center;
   }
   body {
     margin: 2px;
