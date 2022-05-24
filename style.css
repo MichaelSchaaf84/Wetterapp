@@ -170,11 +170,20 @@ img {
     overflow-x: hidden;
   }
   .card {
-    padding: 1.5em;
+    padding: 1em;
     padding-bottom: 1em;
     margin: 0;
   }
   .iconBeschreibung.flex {
     flex-direction: column;
+  }
+}
+@media all and (max-width: 423px) {
+  img.icon {
+    margin: 0 auto;
+    max-width: 100px;
+  }
+  h4 {
+    font-size: 16px;
   }
 }
