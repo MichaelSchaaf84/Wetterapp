@@ -59,20 +59,22 @@ h1.temp {
   margin: 0;
 }
 .beschreibung {
-  justify-content: center;
-  align-items: center;
   text-transform: capitalize;
 
-  font-size: 20px;
   font-size: 20px;
 
   margin-top: -20px;
   margin-bottom: 20px;
 }
+.descriptionFor {
+  text-transform: capitalize;
+
+  font-size: 20px;
+
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
 .iconBeschreibung {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-left: 60px;
   text-align: center;
 }
@@ -100,11 +102,13 @@ h3.luft {
 .tag {
   border-radius: 8px;
   padding: 10px;
+  padding-bottom: 0;
   margin: 5px 0 5px 0px;
   background-color: #7979797c;
 }
 
 h6 {
+  margin: 0px;
   margin-top: 10px;
 }
 
@@ -171,6 +175,9 @@ img {
 .untergang {
   margin-left: 5px;
 }
+.svgFor {
+  margin-right: 5px;
+}
 @media all and (max-width: 460px) {
   body {
     margin: 2px;
@@ -185,12 +192,15 @@ img {
     flex-direction: column;
   }
 }
-@media all and (max-width: 423px) {
+@media all and (max-width: 400px) {
   img.icon {
     margin: 0 auto;
     max-width: 100px;
   }
   h4 {
+    font-size: 16px;
+  }
+  .descriptionFor {
     font-size: 16px;
   }
 }
