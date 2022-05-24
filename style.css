@@ -55,8 +55,16 @@ input.suchfeld {
   width: calc(100% - 100px);
   color: white;
 }
+
+.stadt {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 28px;
+  font-weight: 600;
+}
 h1.temp {
   margin: 0;
+  font-size: 34px;
 }
 .beschreibung {
   text-transform: capitalize;
@@ -178,18 +186,21 @@ img {
 .svgFor {
   margin-right: 5px;
 }
-@media all and (max-width: 460px) {
+@media all and (max-width: 480px) {
   body {
     margin: 2px;
     overflow-x: hidden;
   }
   .card {
-    padding: 1em;
-    padding-bottom: 1em;
+    padding: 0.5em;
+    padding-bottom: 0.5em;
     margin: 0;
   }
   .iconBeschreibung.flex {
     flex-direction: column;
+  }
+  .descriptionFor {
+    font-size: 14px;
   }
 }
 @media all and (max-width: 400px) {
@@ -197,10 +208,19 @@ img {
     margin: 0 auto;
     max-width: 100px;
   }
+  body {
+    margin: 0;
+  }
+  .card {
+    padding: 0.5em;
+    padding-bottom: 0.5em;
+    margin: 0;
+    border-radius: 10px;
+  }
   h4 {
     font-size: 16px;
   }
   .descriptionFor {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

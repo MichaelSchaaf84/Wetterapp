@@ -44,7 +44,10 @@ let wetter = {
     //  console.log("Test:", dt);
     // console.log(data, lat, lon);
     // console.log(name, icon, description, temp, humidity, speed);
-    document.querySelector(".stadt").innerText = "Wetter für " + name;
+    document.querySelector(
+      ".stadt"
+    ).innerHTML = `<div class="stadt">Wetter für <span style="color:#ec6e4c">${name}</span>`;
+    /*"Wetter für " + name;*/
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + "@4x.png";
     document.querySelector(".beschreibung").innerText = description;
@@ -93,7 +96,7 @@ let wetter = {
         <div class="svgwind">
              <svg class="svgFor"
                 stroke="currentColor"
-                fill="currentColor"
+                fill="#EC6E4C"
                 stroke-width="0"
                 viewBox="0 0 512 512"
                 height="1em"
@@ -112,7 +115,7 @@ let wetter = {
              <svg
               class="svgFor"
                 stroke="currentColor"
-                fill="currentColor"
+                fill="#EC6E4C"
                 stroke-width="0"
                 viewBox="0 0 512 512"
                 height="1em"
