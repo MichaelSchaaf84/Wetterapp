@@ -164,6 +164,13 @@ img.icon {
 img {
   margin-left: 0px;
 }
+
+.aufgang {
+  margin-left: 5px;
+}
+.untergang {
+  margin-left: 5px;
+}
 @media all and (max-width: 460px) {
   body {
     margin: 2px;

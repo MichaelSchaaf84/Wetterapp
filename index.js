@@ -105,7 +105,25 @@ let wetter = {
       forcast.daily[0].temp.min.toFixed(1) + "°C";
     document.querySelector(".max").innerText =
       forcast.daily[0].temp.max.toFixed(1) + "°C";
+    let { sunrise, sunset } = forcast.current;
+    sunrise = sunrise - 7200;
+    sunset = sunset - 7200;
+    let timezone = forcast.timezone_offset;
+    console.log(timezone, sunrise);
+    let auf = new Date((sunrise + timezone) * 1000).toLocaleString("de-DE", {
+      hour: "numeric",
+      minute: "numeric",
+    });
+    document.querySelector(".aufgang").innerText = auf + " Uhr";
+
+    console.log(auf);
+    let unter = new Date((sunset + timezone) * 1000).toLocaleString("de-DE", {
+      hour: "numeric",
+      minute: "numeric",
+    });
+    document.querySelector(".untergang").innerText = unter + " Uhr";
   },
+  zeitSonne: function (forcast) {},
   luftVer: function (luft) {
     console.log(luft);
     // const { aqi } = luft.list[0].main.aqi;
