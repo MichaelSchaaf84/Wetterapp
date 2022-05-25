@@ -41,6 +41,10 @@ let wetter = {
       .then((luft) => this.luftVer(luft));
     console.log(data);
     console.log(icon);
+    let fact = fetch("https://uselessfacts.jsph.pl/random.json?language=de")
+      .then((response) => response.json())
+      .then((fact) => this.displayFact(fact));
+
     //  console.log("Test:", dt);
     // console.log(data, lat, lon);
     // console.log(name, icon, description, temp, humidity, speed);
@@ -71,6 +75,12 @@ let wetter = {
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
     //  console.log(dt, data.timezone);
     console.log();
+  },
+
+  displayFact: function (fact) {
+    console.log(fact);
+    let factData = fact.text;
+    document.querySelector(".fact").innerText = factData;
   },
   displayVorhersage: function (forcast) {
     document.querySelector(".canvas").innerHTML = forcast.daily
